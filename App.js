@@ -62,7 +62,7 @@ export default class App extends React.Component {
   
 
   handleRemovePress= timerId => {
-    this.setState({timers:this.state.timers.filter{t => t.id != timerId}})
+    this.setState({timers:this.state.timers.filter(t => t.id != timerId)})
   }
   handleCreateSubmit = timer => {
     const{timers}= this.state;
@@ -91,13 +91,14 @@ export default class App extends React.Component {
     });
   }
 
-  render() 
+  render() {
     const {timers} =this.state;
 
   
 
   return (
-    <View style={styles.appContainer}>
+    <View>
+      <View style={styles.appContainer}>
     <View style={styles.titleContainer}>
       <Text style={styles.title}>TIMERS</Text>
 
@@ -123,9 +124,9 @@ export default class App extends React.Component {
       </ScrollView>
     </KeyboardAvoidingView>
     </View>
-  );
-
-
+    </View>
+  )}
+}
 
 
 const styles = StyleSheet.create({
@@ -136,7 +137,7 @@ const styles = StyleSheet.create({
     paddingTop: 35,
     paddingBottom: 15,
     borderBottomWidth:1,
-    borderBottomColor: #D6D7DA,
+    borderBottomColor: "#D6D7DA",
   },
   title:{
     alignItems:'center',
